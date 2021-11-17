@@ -9,29 +9,45 @@
         <p class="big-text" id="days">0</p>
         <span>Days</span>
       </div>
-      <div class="days-c">
+      <div class="hours-c">
         <p class="big-text" id="days">0</p>
         <span>Hours</span>
       </div>
-      <div class="days-c">
+      <div class="minutes-c">
         <p class="big-text" id="days">0</p>
         <span>Minutes</span>
       </div>
-      <div class="days-c">
+      <div class="seconds-c">
         <p class="big-text" id="days">0</p>
         <span>Seconds</span>
       </div>
     </div>
   </div>
 </template>
-
+vt
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  setup(){
+    return {}
+  },
+  components:{}
 }
 </script>
 
 <style scoped lang="scss">
+h1{
+  font-size: 6rem;
+}
+.countdown-container{
+  display: flex;
+}
+.big-text{
+  font-size:6rem;
+  line-height: 1;
+  margin: 0 2rem;
+}
+
 .home{
   display: grid;
   height: 80vh;
