@@ -6,30 +6,35 @@
 
     <div class="countdown-container text-white">
       <div class="days-c">
-        <p class="big-text" id="days">0</p>
+        <p class="big-text" id="days">{{timeData.days}}</p>
         <span>Days</span>
       </div>
       <div class="hours-c">
-        <p class="big-text" id="days">0</p>
+        <p class="big-text" id="hours">{{timeData.minutes}}</p>
         <span>Hours</span>
       </div>
       <div class="minutes-c">
-        <p class="big-text" id="days">0</p>
+        <p class="big-text" id="minutes">{{timeData.hours}}</p>
         <span>Minutes</span>
       </div>
       <div class="seconds-c">
-        <p class="big-text" id="days">0</p>
+        <p class="big-text" id="seconds">{{timeData.seconds}}</p>
         <span>Seconds</span>
       </div>
     </div>
   </div>
 </template>
-vt
 <script>
+import { computed, onMounted } from '@vue/runtime-core'
+import {countdownService} from "../services/CountdownService"
+import { AppState } from '../AppState'
 export default {
   name: 'Home',
   setup(){
-    return {}
+    onMounted(() => countdownService.count())
+    return {
+      timeData: computed(() => AppState.timeData)
+    }
   },
   components:{}
 }
